@@ -339,9 +339,18 @@ public class Player
             while (qb.contains(choice) == false)
             {
                 System.out.println("invalid entry");
-                System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
-                System.out.println("Positions: Quarterback - qb");
-                choice = scan.nextLine();
+                System.out.println("Would you like to add this player to the list?(yes/no)");
+                String choice2 = scan.nextLine();
+                if (choice2 == "yes")
+                {
+                    qb.add(choice);
+                }
+                else
+                {
+                    System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
+                    System.out.println("Positions: Quarterback - qb");
+                    choice = scan.nextLine();
+                }
             }
             if (numqb >= 1)
             {
@@ -354,6 +363,30 @@ public class Player
                 team.add(choice);
             }
         }
-        
+        if (choice.substring(0,2) == "rb")
+        {
+            while (qb.contains(choice) == false)
+            {
+                System.out.println("invalid entry");
+                System.out.println("Would you like to add this player to the list?(yes/no)");
+                String choice2 = scan.nextLine();
+                if (choice2 == "yes")
+                {
+                    rb.add(choice);
+                }
+                else
+                {
+                    System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
+                    System.out.println("Positions: Running Back - rb");
+                    choice = scan.nextLine();
+                }
+            }
+            if (numrb>3||(numwr>=4||numte>=3))
+            {
+                numbench+=1;
+                
+            }
+                
+        }
     }
 }
