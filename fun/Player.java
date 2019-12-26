@@ -17,10 +17,9 @@ public class Player
     private int numrb = 0;
     private int numwr = 0;
     private int numte = 0;
+    private int numkk = 0;
     private int numteamD = 0;
     private int numd = 0;
-    private int numflex1 = 0;
-    private int numflex2 = 0;
     private int numbench = 0;
     private List team = new ArrayList();
     public Player(String name)
@@ -365,7 +364,7 @@ public class Player
         }
         if (choice.substring(0,2) == "rb")
         {
-            while (qb.contains(choice) == false)
+            while (rb.contains(choice) == false)
             {
                 System.out.println("invalid entry");
                 System.out.println("Would you like to add this player to the list?(yes/no)");
@@ -384,9 +383,167 @@ public class Player
             if (numrb>3||(numwr>=4||numte>=3))
             {
                 numbench+=1;
-                
+                team.add(choice);
             }
-                
+            else
+            {
+                numrb+=1;
+                team.add(choice);
+            }
         }
+        if (choice.substring(0,2)=="wr")
+        {
+            while (wr.contains(choice)==false)
+            {
+                System.out.println("invalid entry");
+                System.out.println("Would you like to add this player to the list?(yes/no)");
+                String choice2=scan.nextLine();
+                if (choice2 == "yes")
+                {
+                    wr.add(choice);
+                }
+                else
+                {
+                    System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
+                    System.out.println("Positions: Wide Receiver - wr");
+                    choice = scan.nextLine();
+                }
+            }
+            if (numwr > 4 || (numrb>=3 || numte>=3))
+            {
+                numbench+=1;
+                team.add(choice);
+            }
+            else
+            {
+                numwr += 1;
+                team.add(choice);
+            }
+        }
+        if (choice.substring(0,2)=="te")
+        {
+            while (te.contains(choice)==false)
+            {
+                System.out.println("invalid entry");
+                System.out.println("Would you like to add this player to the list?(yes/no)");
+                String choice2=scan.nextLine();
+                if (choice2 == "yes")
+                {
+                    te.add(choice);
+                }
+                else
+                {
+                    System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
+                    System.out.println("Positions: Tight End - te");
+                    choice = scan.nextLine();
+                }
+            }
+            if (numte > 3 || (numrb>=3 || numwr>=4))
+            {
+                numbench+=1;
+                team.add(choice);
+            }
+            else
+            {
+                numte += 1;
+                team.add(choice);
+            }
+        }
+        if (choice.substring(0,2)=="tD")
+        {
+            while (teamD.contains(choice)==false)
+            {
+                System.out.println("invalid entry");
+                System.out.println("Would you like to add this player to the list?(yes/no)");
+                String choice2=scan.nextLine();
+                if (choice2 == "yes")
+                {
+                    teamD.add(choice);
+                }
+                else
+                {
+                    System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
+                    System.out.println("Positions: Team Defense - tD");
+                    choice = scan.nextLine();
+                }
+            }
+            if (numteamD>=1)
+            {
+                numbench+=1;
+                team.add(choice);
+            }
+            else
+            {
+                numteamD += 1;
+                team.add(choice);
+            }
+        }
+        if (choice.substring(0,2)=="iD")
+        {
+            while (D.contains(choice)==false)
+            {
+                System.out.println("invalid entry");
+                System.out.println("Would you like to add this player to the list?(yes/no)");
+                String choice2=scan.nextLine();
+                if (choice2 == "yes")
+                {
+                    D.add(choice);
+                }
+                else
+                {
+                    System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
+                    System.out.println("Positions: Individual Defensive Player - iD");
+                    choice = scan.nextLine();
+                }
+            }
+            if (numd>=1)
+            {
+                numbench+=1;
+                team.add(choice);
+            }
+            else
+            {
+                numd += 1;
+                team.add(choice);
+            }
+        }
+        if (choice.substring(0,2)=="KK")
+        {
+            while (K.contains(choice)==false)
+            {
+                System.out.println("invalid entry");
+                System.out.println("Would you like to add this player to the list?(yes/no)");
+                String choice2=scan.nextLine();
+                if (choice2 == "yes")
+                {
+                    K.add(choice);
+                }
+                else
+                {
+                    System.out.println("Type the name of the player you want to pick(format: <position>-<name>)");
+                    System.out.println("Positions: Kicker - KK");
+                    choice = scan.nextLine();
+                }
+            }
+            if (numkk>=1)
+            {
+                numbench+=1;
+                team.add(choice);
+            }
+            else
+            {
+                numkk += 1;
+                team.add(choice);
+            }
+        }
+    }
+    public int getLen()
+    {
+        return team.size();
+    }
+    public String toString()
+    {
+        String print = "Team: "+team;
+        return print;
     }
 }
