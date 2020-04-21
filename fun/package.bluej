@@ -1,3 +1,31 @@
 #BlueJ package file
-#Tue Dec 24 12:49:34 CST 2019
+dependency1.from=fantasy_football_client
+dependency1.to=Player
+dependency1.type=UsesDependency
+objectbench.height=93
+objectbench.width=1264
+package.editor.height=489
+package.editor.width=1166
+package.editor.x=0
+package.editor.y=0
+package.numDependencies=1
+package.numTargets=2
+package.showExtends=true
+package.showUses=true
 project.charset=UTF-8
+target1.height=50
+target1.name=fantasy_football_client
+target1.showInterface=false
+target1.type=ClassTarget
+target1.typeParameters=
+target1.width=160
+target1.x=236
+target1.y=45
+target2.height=50
+target2.name=Player
+target2.showInterface=false
+target2.type=ClassTarget
+target2.typeParameters=
+target2.width=120
+target2.x=70
+target2.y=10
